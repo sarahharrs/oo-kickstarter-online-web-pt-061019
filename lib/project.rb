@@ -1,7 +1,7 @@
 'require pry'
 
 class Project
-  attr_accessor :title, :backers
+  attr_reader :title, :backers
 
   def initialize(title)
     @title = title
@@ -9,6 +9,8 @@ class Project
   end
 
   def add_backer(backer)
-    @backers << backer
+    backers << backer
     backer.backed_projects << self
   end
+
+end
